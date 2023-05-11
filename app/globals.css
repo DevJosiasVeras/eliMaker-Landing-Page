@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(68, 66, 66, 0.158);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 12px;       /* roundness of the scroll thumb */
+  border: 1px solid whitesmoke;  /* creates padding around scroll thumb */
+}
+
+
+*{
+  scroll-behavior: smooth;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+
+  background-color: #FDBD18;
+  
+  bottom: 0;
+  left: 0;
+
+  width: 0px;
+  height: 0px;
+}
+
+.link:hover:before{
+  width: 100%;
+  height: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .cover::before {
+  content: '';
+  position: absolute;
+
+  top: 8px;
+  left: -10px;
+
+  border: 1px solid #FDBD18;
+  border-radius: 50%;
+
+  width: 120%;
+  height: 75%;
+
+  transform: rotate(-10deg);
+
+  animation: coverAnimation infinite 5s ease-in-out ;
+}
+
+@keyframes coverAnimation {
+  0% {
+    transform: translateY(0) rotate(-10deg);
+    width: 120%;
+  }	
+  50% {
+    transform: translateY(5px) rotate(10deg);
+    width: 110%;
+  }
+  100% {
+    transform: translateY(0) rotate(-10deg);
+    width: 120%;
+  }
+}
+
+.img-bg::after{
+  content: '';
+  position: absolute;
+
+  z-index: -1;
+
+  top: -80px;
+  left: -60px;
+
+  width: 385px;
+  height: 431px;
+
+  background: radial-gradient(50% 50% at 50% 50%, #808080 0%, rgba(50, 15, 133, 0) 100%);;
+}
+
+  .skills::after {
+  content: '';
+  position: absolute;
+
+  z-index: -1;
+
+  top: -145px;
+  left: 31%;
+
+  width: 442px;
+  height: 520px;
+
+  background: radial-gradient(50% 50% at 50% 50%, #808080 0%, rgba(50, 15, 133, 0) 100%);
+
+  animation: infinite 12s cubic-bezier(0.175, 0.885, 0.32, 1.275) skillAnimation;
+  }
+
+  @keyframes skillAnimation {
+  0% {
+    transform: translateY(0) rotate(-10deg);
+    background: radial-gradient(50% 50% at 50% 50%, #808080 0%, rgba(50, 15, 133, 0) 100%);
+    width: 542px;	
+  }
+  50% {
+    transform: translateY(15px) rotate(100deg);
+    background: radial-gradient(50% 50% at 50% 50%, #808080 5%, rgba(50, 15, 133, 0) 100%);
+    width: 500px;
+  }
+  100% {
+    transform: translateY(0) rotate(-10deg);
+    background: radial-gradient(50% 50% at 50% 50%, #808080 0%, rgba(50, 15, 133, 0) 100%);
+    width: 542px;		
+  }
+  }
+
+  .contact {
+    bottom: -35px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff ;
+  }
+}
+
