@@ -21,8 +21,8 @@ export default function RootLayout({
       <body className={`${preahvihear.className} bg-[#FFFFFF] h-[190vh]`}>
         <Header />
         {children}
-        <div className='hidden md:flex'>
-        <Contact />
+        <div className=''>
+        <Contact/>
         </div>
       </body>
     </html>
